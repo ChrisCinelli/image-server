@@ -78,6 +78,9 @@ domain.run(function () {
 
   }
 
+  var port = process.env.PORT || 3000;
+  console.log("Image server started on port:", port);
+
   app
     // doing the image magick :)
     // every URL request is handled by the middleware
@@ -86,5 +89,5 @@ domain.run(function () {
     // sending emails in case of errors
     .use(errorHandler)
 
-    .listen(process.env.PORT || 3000);
+    .listen(port);
 });

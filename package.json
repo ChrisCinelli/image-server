@@ -8,17 +8,18 @@
   ],
   "private": true,
   "dependencies": {
-    "backoff": "~2.3.0",
+    "backoff": "~2.5.0",
     "bl": "~0.8.0",
     "connect": "~2.16.2",
     "debug": "^0.7.4",
-    "errormailer": "~0.3.0",
+    "errormailer": "~1.0.1",
     "kanban": "0.0.3",
     "knox": "^0.8.10",
     "longjohn": "~0.2.0",
     "minimatch": "~0.2.11",
-    "newrelic": "1.5.5",
-    "nodemailer": "~0.6.5",
+    "newrelic": "1.28.1",
+    "nodemailer": "~0.7.1",
+    "randomstring": "~1.1.5",
     "resizer": "0.0.5"
   },
   "engines": {
