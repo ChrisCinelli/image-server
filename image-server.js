@@ -48,6 +48,7 @@ var mage = new Mage({
   client: client,
   parallelism: parseInt(process.env.PARALLELISM, 10),
   cacheOnS3: cacheOnS3,
+  region: process.env.S3_REGION,
   bucket: process.env.S3_BUCKET,
   pattern: process.env.PATTERN,
   processorTimeout: parseInt(process.env.PROCESSOR_TIMEOUT, 10),
@@ -65,7 +66,7 @@ domain.run(function () {
     .use(connect.query());
 
 
-  if (process.env.ENABLE_ERROR_PATH === 'true') {
+  if (process.env.ERROR_PATH) {
 
     // send an email to verify if there is an error
     app.use(function(req, res, next) {
