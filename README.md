@@ -5,7 +5,25 @@ This is a first experimental release of the ultra-fast
 image server that automatically resizes images taken
 from S3.
 
+## Run in a docker container
+
+### Build locally
+
+Clone the repo:
+
+```
+git clone git@github.com:ChrisCinelli/image-server.git
+cd image-server
+
+```
+
+Create a bucket on S3 if you want to use S3 for caching (this is recommended)
+Make sure you copy and edit run-docker-template.sh with the your AWS keys and bucket name.
+
 ## Run locally
+
+Now you should be able to run it. The server will be reachable at your dockerhost IP.
+Try http://dockerhost:8081/w200/h100/for/http://images.dailytech.com/nimage/Nyan_Cat_Wide.jpg
 
 ### Dependencies
 
@@ -47,11 +65,14 @@ export S3_BUCKET=YOUR_BUCKET_HERE
 
 Execute the following commands in your terminal:
 ```
-git clone https://github.com/njvitto/blomming-image-server
-cd blomming-image-server
+git clone git@github.com:ChrisCinelli/image-server.git
+cd image-server
 npm install
-./image-server.js
+node ./image-server.js
 ```
+
+
+
 
 ## Run on Heroku
 
@@ -119,4 +140,3 @@ This server operates in the following manner:
    utility from imagemagick;
 3. it forwards the resized image to the user;
 4. it loads the resized image to S3 for later usage.
-
